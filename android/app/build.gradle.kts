@@ -5,6 +5,8 @@ plugins {
     id("dev.flutter.flutter-gradle-plugin")
 }
 
+apply plugin: 'com.google.gms.google-services'
+
 android {
     namespace = "com.example.bakery_app_cassiel_mariana"
     compileSdk = flutter.compileSdkVersion
@@ -41,4 +43,9 @@ android {
 
 flutter {
     source = "../.."
+}
+
+dependencies {
+    implementation (platform("com.google.firebase:firebase-bom:33.10.0"))
+    implementation("com.google.firebase:firebase-analytics")
 }

@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "553853711024",
+    "project_id": "bakeryapp-66a67",
+    "storage_bucket": "bakeryapp-66a67.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:553853711024:android:d132db37aa7b8b190dc175",
+        "android_client_info": {
+          "package_name": "com.example.bakery_app_cassiel_mariana"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDa-O3HsfRT6KdfYI9XU4EMZY5141ARACI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
