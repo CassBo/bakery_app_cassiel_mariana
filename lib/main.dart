@@ -1,3 +1,4 @@
+import 'package:bakery_app_cassiel_mariana/firebase_options.dart';
 import 'package:bakery_app_cassiel_mariana/pages/bottomnav.dart';
 import 'package:bakery_app_cassiel_mariana/pages/home.dart';
 import 'package:bakery_app_cassiel_mariana/pages/login.dart';
@@ -9,7 +10,9 @@ import 'package:flutter/material.dart';
 
 void main() async{
   WidgetsFlutterBinding.ensureInitialized();
-await Firebase.initializeApp;
+await Firebase.initializeApp(
+  options: DefaultFirebaseOptions.currentPlatform,
+);
   runApp(const MyApp());
 }
 
