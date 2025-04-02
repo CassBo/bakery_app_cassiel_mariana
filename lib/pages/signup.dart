@@ -77,7 +77,6 @@ class _SignUpState extends State<SignUp> {
         height: double.infinity,
         child: Stack(
           children: [
-            // Fondo degradado
             Container(
               width: MediaQuery.of(context).size.width,
               height: MediaQuery.of(context).size.height / 2.5,
@@ -89,7 +88,6 @@ class _SignUpState extends State<SignUp> {
                 ),
               ),
             ),
-            // Fondo blanco con bordes redondeados
             Container(
               margin: EdgeInsets.only(
                   top: MediaQuery.of(context).size.height / 3),
@@ -103,7 +101,6 @@ class _SignUpState extends State<SignUp> {
                 ),
               ),
             ),
-            // Formulario de registro
             Container(
               margin: EdgeInsets.only(top: 60.0, left: 20.0, right: 20.0),
               child: Column(
@@ -208,22 +205,29 @@ class _SignUpState extends State<SignUp> {
                                 ),
                               ),
                             ),
+                            SizedBox(height: 40.0),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Text("Already have an account? ",style: TextStyle(fontSize: 16),),
+                                GestureDetector(
+                                  onTap: () {
+                                    Navigator.push(context, MaterialPageRoute(builder: (context) => LogIn()));
+                                  },
+                                  child: Text(
+                                    "Login",
+                                    style: TextStyle(
+                                      fontWeight: FontWeight.bold,
+                                      decoration: TextDecoration.underline,
+                                      fontSize: 16
+                                    ),
+                                  ),
+                                ),
+                              ],
+                            ),
                           ],
                         ),
                       ),
-                    ),
-                  ),
-                  SizedBox(height: 40.0),
-                  GestureDetector(
-                    onTap: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => LogIn()),
-                      );
-                    },
-                    child: Text(
-                      "Already have an account? Login",
-                      style: AppWidget.semiBoldTextFeildStyle(),
                     ),
                   ),
                 ],
