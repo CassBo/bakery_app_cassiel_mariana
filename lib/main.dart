@@ -1,3 +1,4 @@
+import 'package:bakery_app_cassiel_mariana/admin/admin_login.dart';
 import 'package:bakery_app_cassiel_mariana/firebase_options.dart';
 import 'package:bakery_app_cassiel_mariana/pages/bottomnav.dart';
 import 'package:bakery_app_cassiel_mariana/pages/home.dart';
@@ -48,7 +49,7 @@ class MyApp extends StatelessWidget {
         // tested with just a hot reload.
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       ),
-      home: Onboard()
+      home: AdminLogin()
     );
   }
 }
