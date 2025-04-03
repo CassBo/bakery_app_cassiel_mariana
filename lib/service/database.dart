@@ -1,3 +1,4 @@
+import 'package:bakery_app_cassiel_mariana/admin/add_food.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 
 class DatabaseMethods{
@@ -7,5 +8,9 @@ class DatabaseMethods{
 
   UpdateUserwallet(String id, String amount)async{
 return await FirebaseFirestore.instance.collection("users").doc(id).update({"Wallet": amount});
+  }
+
+  Future addFoodItem(Map<String,dynamic>userInfoMap,String name)async{
+    return await FirebaseFirestore.instance.collection("users").doc(name).set(userInfoMap);
   }
 }
