@@ -1,1 +1,19 @@
-{"flutter":{"platforms":{"android":{"default":{"projectId":"bakeryapp-66a67","appId":"1:553853711024:android:d132db37aa7b8b190dc175","fileOutput":"android/app/google-services.json"}},"dart":{"lib/firebase_options.dart":{"projectId":"bakeryapp-66a67","configurations":{"android":"1:553853711024:android:d132db37aa7b8b190dc175","ios":"1:553853711024:ios:7b5915350c75bad50dc175","macos":"1:553853711024:ios:7b5915350c75bad50dc175","web":"1:553853711024:web:07f94e3dc57ca7a60dc175","windows":"1:553853711024:web:cc2499baff9e8f690dc175"}}}}}}
+{"flutter":{"platforms":
+    {"android":
+        {"default":
+            {"projectId":"bakeryapp-66a67",
+                "appId":"1:553853711024:android:d132db37aa7b8b190dc175",
+                "fileOutput":"android/app/google-services.json"}},
+                    "dart":{"lib/firebase_options.dart":
+                        {"projectId":"bakeryapp-66a67","configurations":
+                            {"android":"1:553853711024:android:d132db37aa7b8b190dc175",
+                                "ios":"1:553853711024:ios:7b5915350c75bad50dc175",
+                                "macos":"1:553853711024:ios:7b5915350c75bad50dc175",
+                                "web":"1:553853711024:web:07f94e3dc57ca7a60dc175",
+                                "windows":"1:553853711024:web:cc2499baff9e8f690dc175"
+                            }
+                        }
+            }
+        }
+    }
+}

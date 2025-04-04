@@ -1,5 +1,7 @@
 import 'package:bakery_app_cassiel_mariana/pages/details.dart';
+import 'package:bakery_app_cassiel_mariana/service/database.dart';
 import 'package:bakery_app_cassiel_mariana/widget/widget_support.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 
 class Home extends StatefulWidget {
@@ -11,6 +13,73 @@ class Home extends StatefulWidget {
 
 class _HomeState extends State<Home> {
   bool icecream = false, pizza = false, salad = false, burger = false;
+
+Stream? fooditemStream;
+ontheload()async{
+fooditemStream = await DatabaseMethods().getFoodItem("Pizza");
+setState(() {
+  
+});
+}
+
+@override
+  void initState(){
+    ontheload();
+    super.initState();
+  }
+
+Widget allItems(){
+  return StreamBuilder(stream:fooditemStream, builder: (context, AsyncSnapshot snapshot){
+  return snapshot.hasData? ListView.builder(
+    padding: EdgeInsets.zero,
+    itemCount: snapshot.data.docs.length,
+    shrinkWrap: true,
+    scrollDirection: Axis.horizontal,
+    itemBuilder: (context, index){
+    DocumentSnapshot ds = snapshot.data.docs[index];
+    return GestureDetector(
+                    onTap: () {
+                      //Navigator.push(context, MaterialPageRoute(builder: (context)=> Details()));
+                    },
+                    child: Container(
+                      margin: EdgeInsets.all(4),
+                      child: Material(
+                        elevation: 5.0,
+                        borderRadius: BorderRadius.circular(20),
+                        child: Container(
+                          padding: EdgeInsets.all(14),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Image.network(
+                                "images/salad2.png",
+                                height: 150,
+                                width: 150,
+                                fit: BoxFit.cover,
+                              ),
+                              Text(
+                                "Veggie Taco Hash",
+                                style: AppWidget.semiBoldTextFeildStyle(),
+                              ),
+                              SizedBox(height: 5.0),
+                              Text(
+                                "Fresh and Healthy",
+                                style: AppWidget.lightTextFeildStyle(),
+                              ),
+                              SizedBox(height: 5.0),
+                              Text(
+                                "\$25",
+                                style: AppWidget.semiBoldTextFeildStyle(),
+                              )
+                            ],
+                          ),
+                        ),
+                      ),
+                    ),
+                  );
+  }):CircularProgressIndicator();
+  });
+}
 
   @override
   Widget build(BuildContext context) {
@@ -62,7 +131,7 @@ class _HomeState extends State<Home> {
                 children: [
                   GestureDetector(
                     onTap: () {
-                      Navigator.push(context, MaterialPageRoute(builder: (context)=> Details()));
+                      //Navigator.push(context, MaterialPageRoute(builder: (context)=> Details()));
                     },
                     child: Container(
                       margin: EdgeInsets.all(4),

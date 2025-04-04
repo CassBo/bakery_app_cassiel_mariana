@@ -13,4 +13,16 @@ return await FirebaseFirestore.instance.collection("users").doc(id).update({"Wal
   Future addFoodItem(Map<String,dynamic>userInfoMap,String name)async{
     return await FirebaseFirestore.instance.collection("users").doc(name).set(userInfoMap);
   }
+
+Future<Stream<QuerySnapshot>>getFoodItem(String name)async{
+    return await FirebaseFirestore.instance.collection(name).snapshots();
+  }
+
+  Future addFoodToCart(Map<String, dynamic> userInfoMap, String id) async {
+    return await FirebaseFirestore.instance.collection("users").doc(id).collection("cart").add(userInfoMap);
+    }
+
+    Future<Stream<QuerySnapshot>>getFoodCart(String id)async{
+    return await FirebaseFirestore.instance.collection("users").doc(id).collection("Cart").snapshots();
+  }
 }
